@@ -5,7 +5,9 @@ var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var helpers = require('./helpers');
+var yaml = require('js-yaml');
 
+var appConfig = yaml.safeLoad(fs.readFileSync('./.config.yml', 'utf-8'));
 var assetsPath = path.resolve(__dirname, '../static/dist');
 var host = (process.env.HOST || 'localhost');
 var port = (+process.env.PORT + 1) || 3001;
@@ -130,7 +132,8 @@ var webpackConfig = module.exports = {
       __CLIENT__: true,
       __SERVER__: false,
       __DEVELOPMENT__: true,
-      __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
+      __DEVTOOLS__: true,  // <-------- DISABLE redux-devtools HERE
+      'process.env.APP_CONFIG': JSON.stringify(appConfig),
     }),
     webpackIsomorphicToolsPlugin.development(),
 
