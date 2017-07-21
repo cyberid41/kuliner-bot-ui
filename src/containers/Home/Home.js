@@ -8,12 +8,14 @@ import {
   SendButton,
   TextCard,
 } from 'components';
+import Helmet from 'react-helmet';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: 'Bot UI',
+      description: '',
       results: [
         {
           text: "Selamat datang, ada yang bisa %s bantu?",
@@ -72,7 +74,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     const config = process.env.APP_CONFIG;
-    this.setState({ title: config.title });
+    this.setState({ title: config.title, description: config.description });
   }
 
   _renderCard(result) {
@@ -86,10 +88,11 @@ export default class Home extends Component {
   }
 
   render() {
-    const { results, title } = this.state;
+    const { results, title, description } = this.state;
     return (
       <div>
         <Header title={title} />
+        <Helmet title={title} meta={[{ name: description }]} />
         <div className="header-menu-background header-menu-background-dark"></div>
         <div id="page-content" className="page-content header-clear bg bg-cover">
           <div id="page-content-scroll">

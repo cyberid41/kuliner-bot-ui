@@ -19,7 +19,7 @@ module.exports = Object.assign({
 		title: 'Inspirasi Kuliner',
 		description: 'Berbagi Inspirasi Bersama.',
 		head: {
-			titleTemplate: 'Inspirasi Kuliner: %s',
+			titleTemplate: '%s',
 			meta: [
 				{ name: 'twitter:card', content: 'Berbagi inspirasi bersama' },
 				{ name: 'twitter:site', content: '@inspirasikuliner' },
