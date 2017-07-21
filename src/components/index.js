@@ -6,7 +6,7 @@
  *
  */
 
-export ButtonChoiceCard from './Cards/ButtonChoiceCard';
+export ButtonCard from './Cards/ButtonCard';
 export CarouselCard from './Cards/CarouselCard';
 export Header from './Header/Header';
 export SendButton from './SendButton/SendButton';

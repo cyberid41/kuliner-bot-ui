@@ -4,14 +4,14 @@ import { Link } from 'react-router';
 
 export default class TextCard extends Component {
   static propTypes = {
-    position: PropTypes.string,
-    message: PropTypes.string,
+    result: PropTypes.object,
   }
 
   render() {
+    const { result } = this.props;
     return (
       <div>
-        <p className={`speach-${this.props.position} animated fadeIn delay-100`}>{this.props.message}</p>
+        <p className={`speach-${result.position} animated fadeIn delay-100`}>{result.text}</p>
       </div>
     );
   }
