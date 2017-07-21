@@ -13,18 +13,9 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      template: {
-        type: "template",
-        items: [
-          { item: "button", text: "Menu" },
-          { item: "button", text: "Terimakasih" },
-          { item: "button", text: "Tidak" },
-          { item: "button", text: "Oke" }
-        ]
-      },
       results: [
         {
-          text: "Selamat datang, ada yang bisa Siwai bantu?",
+          text: "Selamat datang, ada yang bisa %s bantu?",
           type: "text",
           position: "left"
         },
@@ -39,21 +30,41 @@ export default class Home extends Component {
         {
           type: "carousel",
           items: [
-            { text: "Bakso bakar", price: "IDR45000", image: "/images/pictures/index1.jpg" },
+            { text: "Bakso Bakar", price: "IDR45000", image: "/images/pictures/index1.jpg" },
             { text: "Soto Ayam", price: "IDR40000", image: "/images/pictures/index2.jpg" },
             { text: "Lalapan", price: "IDR35000", image: "/images/pictures/index3.jpg" },
+            { text: "Rendang", price: "IDR15000", image: "/images/pictures/index4.jpg" },
+            { text: "Tahu Tek", price: "IDR10000", image: "/images/pictures/index5.jpg" },
           ]
         },
         {
-          text: "Selamat datang, ada yang bisa Siwai bantu?",
+          text: "Saya pesan tahu tek 2",
           type: "text",
           position: "right"
         },
         {
-          text: "Selamat datang, ada yang bisa Siwai bantu?",
+          text: "oke, apa ada lagi yang mau dipesan?",
           type: "text",
           position: "left"
         },
+        {
+          text: "sama bakso bakar",
+          type: "text",
+          position: "right"
+        },
+        {
+          text: "Biar %s konfirmasi untuk pesanannya",
+          type: "text",
+          position: "left"
+        },
+        {
+          type: "carousel",
+          status: "booked",
+          items: [
+            { text: "Bakso Bakar", price: "IDR45000", image: "/images/pictures/index1.jpg" },
+            { text: "Tahu Tek", price: "IDR10000", image: "/images/pictures/index5.jpg" },
+          ]
+        }
       ]
     }
   }
@@ -72,7 +83,7 @@ export default class Home extends Component {
     const { results } = this.state;
     return (
       <div>
-        <Header />
+        <Header title={"Resto Sedap"} />
         <div className="header-menu-background header-menu-background-dark"></div>
         <div id="page-content" className="page-content header-clear bg bg-cover">
           <div id="page-content-scroll">
